@@ -23,6 +23,20 @@
     header img {
       height: 40px;
     }
+    .search-box {
+      padding: 20px 40px;
+      background-color: #111;
+      text-align: center;
+    }
+    .search-box input {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -53,28 +67,47 @@
     Amazing Jav
   </header>
 
-  <div class="video-grid">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Cari video..." onkeyup="filterVideos()">
+  </div>
+
+  <div class="video-grid" id="videoGrid">
     <div class="video-card">
       <iframe src="https://vide0.net/e/041glkcfa8ef" allowfullscreen></iframe>
       <div class="video-title">DLDSS-385 Demi Harta Aku Rela Tutup Mata - Yuko Ono</div>
     </div>
     <div class="video-card">
-      <iframe src="https://vide0.net/d/6ccy0lwcuga9?rel=0&autoplay=0" allowfullscreen></iframe>
+      <iframe src="https://vide0.net/e/6ccy0lwcuga9" allowfullscreen></iframe>
       <div class="video-title">FOCS-240 Tunanganku Selingkuh Dengan Sahabatku - Ichika Seta</div>
     </div>
-     <div class="video-card">
-      <iframe src="https://vide0.net/d/snj4rseg0tew" allowfullscreen></iframe>
+    <div class="video-card">
+      <iframe src="https://vide0.net/e/snj4rseg0tew" allowfullscreen></iframe>
       <div class="video-title">DLDSS-396 Ngentot Ditolak,Video Bertindak - Mino Suzume</div>
     </div>
-     <div class="video-card">
-      <iframe src="https://vide0.net/d/qrzg25l40hif" allowfullscreen></iframe>
+    <div class="video-card">
+      <iframe src="https://vide0.net/e/qrzg25l40hif" allowfullscreen></iframe>
       <div class="video-title">JUR-036 Sperma Cadangan - Yuuka Niizuma</div>
     </div>
-     <div class="video-card">
-      <iframe src="https://vide0.net/d/vkf7y8f5vkxf" allowfullscreen></iframe>
+    <div class="video-card">
+      <iframe src="https://vide0.net/e/vkf7y8f5vkxf" allowfullscreen></iframe>
       <div class="video-title">JUR-270 Hubungan Diam-Diam Dengan Bawahan Suami - Kana Kusakabe</div>
     </div>
-    <!-- Tambah video lain di sini -->
   </div>
+
+  <script>
+    function filterVideos() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.video-card');
+
+      cards.forEach(card => {
+        const title = card.querySelector('.video-title')?.textContent.toLowerCase() || '';
+        if (title.includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
