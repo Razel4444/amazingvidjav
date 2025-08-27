@@ -3,51 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video DoodStream</title>
+  <title>Galeri Video</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      text-align: center;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #222;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      color: #e74c3c;
+      margin: 0;
+    }
+    .search-box input {
+      padding: 6px;
+      border: none;
+      border-radius: 4px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
       padding: 20px;
     }
     .video-card {
-      display: inline-block;
-      margin: 10px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
+      background: #1c1c1c;
+      border-radius: 6px;
       overflow: hidden;
-      background: #fff;
-      width: 250px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .video-card:hover {
+      transform: scale(1.03);
     }
     .video-card img {
       width: 100%;
-      cursor: pointer;
       display: block;
     }
-    .video-title {
+    .video-info {
       padding: 10px;
-      font-weight: bold;
+    }
+    .video-info h3 {
+      font-size: 14px;
+      margin: 0 0 5px;
+      color: #fff;
+    }
+    .video-info span {
+      font-size: 12px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <h1>Koleksi Video</h1>
+  <header>
+    <h1>VideoKu</h1>
+    <div class="search-box">
+      <input type="text" placeholder="Cari video...">
+    </div>
+  </header>
 
-  <div class="video-card">
-    <a href="https://dood.watch/e/ABCDE12345" target="_blank">
-      <img src="https://img.doodcdn.com/splash/ABCDE12345.jpg" alt="Video 1">
-    </a>
-    <div class="video-title">Judul Video 1</div>
+  <div class="video-grid">
+    <!-- Card 1 -->
+    <div class="video-card">
+      <a href="https://dood.watch/e/ABCDE12345" target="_blank">
+        <img src="https://img.doodcdn.com/splash/ABCDE12345.jpg" alt="Video 1">
+      </a>
+      <div class="video-info">
+        <h3>Judul Video 1</h3>
+        <span>Durasi: 02:05</span>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="video-card">
+      <a href="https://dood.watch/e/FGHIJ67890" target="_blank">
+        <img src="https://img.doodcdn.com/splash/FGHIJ67890.jpg" alt="Video 2">
+      </a>
+      <div class="video-info">
+        <h3>Judul Video 2</h3>
+        <span>Durasi: 01:35</span>
+      </div>
+    </div>
+
+    <!-- Tambahkan card lain sesuai kebutuhan -->
   </div>
-
-  <div class="video-card">
-    <a href="https://dood.watch/e/FGHIJ67890" target="_blank">
-      <img src="https://img.doodcdn.com/splash/FGHIJ67890.jpg" alt="Video 2">
-    </a>
-    <div class="video-title">Judul Video 2</div>
-  </div>
-
 </body>
 </html>
